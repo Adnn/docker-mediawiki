@@ -22,7 +22,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     && php composer-setup.php \
     && php -r "unlink('composer-setup.php');" \
     && apt-get update \
-    && apt-get install -y unzip \
+    && apt-get install -y unzip mysql-client \
     && php composer.phar update --no-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
